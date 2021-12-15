@@ -26,7 +26,7 @@ void push_a(list_t **l_a, list_t **l_b)
         tmp2->prev = NULL;
         (*l_a)->begin = tmp2;
         (*l_b)->begin = NULL;
-        my_printf("pa");
+        write(1, "pa ", 4);
     }
 }
 
@@ -44,5 +44,5 @@ void push_b(list_t **l_a, list_t **l_b)
         (*l_b)->begin = tmp;
         (*l_b)->end = tmp;
     }
-    my_printf("pb ");
+    write(1, "pb ", 4);
 }

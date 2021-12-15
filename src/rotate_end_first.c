@@ -21,7 +21,7 @@ void rotate_ra(list_t *l_a)
         l_a->end = scd;
     } else
         my_swap(&l_a->end->data, &l_a->begin->data);
-    my_printf("rra ");
+    write(1, "rra ", 5);
 }
 
 void rotate_rb(list_t *l_b)
@@ -38,12 +38,12 @@ void rotate_rb(list_t *l_b)
         l_b->end = scd;
     } else
         my_swap(&l_b->end->data, &l_b->begin->data);
-    my_printf("rrb ");
+    write(1, "rrb ", 5);
 }
 
 void rotate_rr(list_t *l_a, list_t *l_b)
 {
     rotate_ra(l_a);
     rotate_rb(l_b);
-    my_printf("rrr ");
+    write(1, "rrr ", 5);
 }

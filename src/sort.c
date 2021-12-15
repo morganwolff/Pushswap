@@ -61,5 +61,4 @@ void algo(list_t *l_a, list_t *l_b)
     while (*tmp_b != NULL)
         push_a(&l_a, &l_b);
     my_printf("\n");
-    display_list(l_a);
 }
