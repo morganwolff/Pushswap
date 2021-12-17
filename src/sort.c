@@ -40,15 +40,15 @@ void algo(list_t *l_a, list_t *l_b)
 {
     node_t **tmp_a = &l_a->begin, **tmp_a_end = &l_a->begin;
     node_t **tmp_b = &l_b->begin;
-    int pos = 0, len = 0, min = 0;
+    int pos = 0, len = l_a->length, min = 0;
 
     while ((*tmp_a)->next != NULL) {
         min = find_min(l_a);
         pos = find_pos_min(l_a, min);
-        if ((find_length(l_a) % 2) != 0)
-            len = (find_length(l_a) / 2) + 1;
+        if ((l_a->length % 2) != 0)
+            len = (len / 2) + 1;
         else
-            len = (find_length(l_a) / 2);
+            len /= 2;
         if (pos <= len) {
             for (; (*tmp_a)->data != min;)
                 rotate_a(l_a);

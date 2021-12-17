@@ -29,15 +29,12 @@ void rotate_rb(list_t *l_b)
     node_t *tmp = l_b->end;
     node_t *scd = tmp->prev;
 
-    if (find_length(l_b) > 2) {
-        scd->next = NULL;
-        tmp->prev = NULL;
-        tmp->next = l_b->begin;
-        tmp->next->prev = tmp;
-        l_b->begin = tmp;
-        l_b->end = scd;
-    } else
-        my_swap(&l_b->end->data, &l_b->begin->data);
+    scd->next = NULL;
+    tmp->prev = NULL;
+    tmp->next = l_b->begin;
+    tmp->next->prev = tmp;
+    l_b->begin = tmp;
+    l_b->end = scd;
     write(1, "rrb ", 4);
 }
 
